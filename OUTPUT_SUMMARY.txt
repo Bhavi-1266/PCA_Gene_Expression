@@ -1,0 +1,35 @@
+PCA on gene expression (GSE5325) — assignment output summary
+============================================================
+Samples: 105  |  ER+: 45  |  ER-: 60
+Genes used (2-gene plots): GATA3 (probe 4359), XBP1 (probe 4404)
+Biplot arrows: XBP1 (4404), CCNB2 (4459)
+
+Figure 1a (saved: figure_1a_gata3_xbp1.png)
+  Scatter of GATA3 (x) vs XBP1 (y); black = ER-, red = ER+.
+  Expect strong positive correlation; ER+ tends toward higher expression.
+
+Figure 1b (saved: figure_1b_pc_axes_raw.png)
+  Same scatter with PC1/PC2 as principal axes of the 2×2 covariance (raw units).
+
+PCA (2 columns only, after StandardScaler per gene)
+  PC1 variance explained: 77.86%
+  PC2 variance explained: 22.14%
+  PC loading directions (scaled feature space, sklearn convention):
+    PC1 weights (GATA3, XBP1): [0.70710678 0.70710678]
+    PC2 weights (GATA3, XBP1): [ 0.70710678 -0.70710678]
+
+Figure 1c (saved: figure_1c_pc1_projection.png)
+  Three panels: all samples, ER- only, ER+ only — x = PC1 score.
+  Separation along PC1 mirrors separation visible along the long axis in 1a.
+
+Full matrix PCA (all probes; StandardScaler per gene across the 105 samples)
+  Number of PCs computed: 105
+  PC1 variance explained: 10.20%
+  PC2 variance explained: 7.38%
+  Cumulative variance (PC1–PC10): 45.31%
+
+Figure scree (saved: figure_scree_full_matrix.png)
+  Bar chart of variance explained for the first PCs (see file for count).
+
+Figure biplot (saved: figure_biplot_pc1_pc2.png)
+  Samples in PC1–PC2 space with scaled loading arrows for XBP1 and CCNB2.
